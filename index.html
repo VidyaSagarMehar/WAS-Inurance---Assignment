@@ -9,46 +9,49 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- Tailwind's custom CSS -->
     <style type="text/tailwindcss">
-        :root {
-    --primary-color:  #0B2347;
-    --accent-color: #C93131;
-    --secondary-color: #FDBA2E;
-    --text-primary: #212529;
-    --header-bg: #ffffff;           
-    --header-bg-open: #292e318f;     
-}
+        :root { 
+            --primary-color:  #0B2347;
+            --secondary-color: #FDBA2E;
+            --tertiary-color:  #0B2347;
+            --accent-color: #C93131;
+            --text-primary: #212529;        
+            --header-bg-open: #292e318f;     
+        }
+        body {
+            font-family: 'Lato', sans-serif;
+        }
 
-header#main-header {
-    background-color: transparent;
-    transition: background-color 0.3s ease;
-}
+        header#main-header {
+            background-color: transparent;
+            transition: background-color 0.3s ease;
+        }
 
-header#main-header.open {
-    background-color: var(--header-bg-open);
-    color: white;
-}
+        header#main-header.open {
+            background-color: var(--header-bg-open);
+            color: white;
+        }
 
-header#main-header.open .header-logo {
-    content: url('./images/logo-light.png');
-}
+        header#main-header.open .header-logo {
+            content: url('./images/logo-light.png');
+        }
 
-header#main-header.open nav > a,
-header#main-header.open nav > ul > li > a,
-header#main-header.open nav > ul > li > button,
-header#main-header.open nav svg {
-    color: white !important;
-}
-#travelMenu,
-#travelMenu a,
-#travelMenu button,
-#travelMenu p,
-#travelMenu h3 {
-    color: var(--text-primary) !important;
-}
-/* Make sure dropdown stays on top */
-#travelMenu {
-    z-index: 9999;   /* very high – above everything */
-}
+        header#main-header.open nav > a,
+        header#main-header.open nav > ul > li > a,
+        header#main-header.open nav > ul > li > button,
+        header#main-header.open nav svg {
+            color: white !important;
+        }
+        #travelMenu,
+        #travelMenu a,
+        #travelMenu button,
+        #travelMenu p,
+        #travelMenu h3 {
+            color: var(--text-primary) !important;
+        }
+        /* Make sure dropdown stays on top */
+        #travelMenu {
+            z-index: 9999;
+        }
     </style>
     <!-- Custom Lato font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,7 +59,6 @@ header#main-header.open nav svg {
     <link
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
         rel="stylesheet">
-
 </head>
 
 <body class="min-h-screen bg-[url('./images/bg-cover.jpg')] 
@@ -112,7 +114,7 @@ header#main-header.open nav svg {
 
                             <!-- Links -->
                             <div
-                                class="space-y-3 text-sm font-semibold text-[var(--text-primary)]  p-5 border-gray-200 border-l">
+                                class="space-y-3 text-sm font-semibold text-[var(--tertiary-colo)]  p-5 border-gray-200 border-l">
                                 <a href="#" class="block hover:underline">Plans</a>
                                 <a href="#" class="block hover:underline">Upgrades</a>
                                 <a href="#" class="block hover:underline">Traveller Type</a>
@@ -200,9 +202,8 @@ header#main-header.open nav svg {
         </div>
     </div>
 
-
     <!-- Hero Section -->
-    <section class=" flex flex-col justify-center items-center">
+    <main class=" flex flex-col justify-center items-center">
         <!-- Headline -->
         <div class="text-center p-6 pb-12">
             <p class="uppercase text-xl tracking-widest font-normal">Breaking the limit of traditional travel</p>
@@ -305,10 +306,10 @@ header#main-header.open nav svg {
                 </button>
 
             </div>
+        </div>
+    </main>
 
-    </section>
-
-    <!-- Script -->
+    <!-- External Script -->
     <script src="./script.js"></script>
 </body>
 

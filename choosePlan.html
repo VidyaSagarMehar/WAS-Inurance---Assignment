@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CND TailwindCSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Tailwind's custom CSS -->
+    <style type="text/tailwindcss">
+        :root { 
+            --primary-color:  #0B2347;
+            --secondary-color: #FDBA2E;
+            --tertiary-color:  #0B2347;
+            --accent-color: #C93131; 
+            --text-primary: #212529;
+            --card-bg-color: #EEEEEE;   
+        }
+        body {
+            font-family: 'Lato', sans-serif;
+        }
+    </style>
+    <!-- Custom Lato font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body class="bg-gray-50 text-sm">
+
+    <!-- HEADER -->
+    <header class="bg-[var(--tertiary-color)] text-white">
+        <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
+            <div class="flex items-center gap-2">
+                <img class="w-4" src="./images//Back Button.png" alt="button"> <span class="text-xs">Back</span>
+            </div>
+            <img src="./images/logo-light.png" alt="">
+            <!-- empty item -->
+            <span></span>
+        </div>
+    </header>
+
+    <!-- Stepper -->
+    <div class="bg-white shadow-xs">
+        <div class="max-w-6xl mx-auto px-6 py-4">
+
+            <!-- Line -->
+            <div class="relative flex items-center justify-between">
+                <div class="absolute top-3 left-9 w-full h-[2px] bg-gray-200"></div>
+                <div class="absolute top-3 left-9 w-[17.5vw] h-[2px] bg-blue-600"></div>
+
+                <!-- Step 1 (Completed) -->
+                <div class="relative z-10 flex flex-col items-center">
+                    <div class="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs">
+                        ✓
+                    </div>
+                    <span class="mt-2 text-xs">Get Quote</span>
+                </div>
+
+                <!-- Step 2 (Active) -->
+                <div class="relative z-10 flex flex-col items-center">
+                    <div class="w-6 h-6 flex items-center justify-center">
+                        <img src="./images/plane.png" alt="">
+                    </div>
+                    <span class="mt-2 text-xs font-semibold">Plan Option</span>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative z-10 flex flex-col items-center">
+                    <div class="w-6 h-6 rounded-full border-2 border-gray-300 bg-white">
+                    </div>
+                    <span class="mt-2 text-xs text-gray-400">Travellers</span>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="relative z-10 flex flex-col items-center">
+                    <div class="w-6 h-6 rounded-full border-2 border-gray-300 bg-white">
+                    </div>
+                    <span class="mt-2 text-xs text-gray-400">Payment</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- CONTENT -->
+    <main class="max-w-6xl mx-auto px-4 py-6">
+
+        <!-- Trip Summary -->
+        <div class="grid grid-cols-3 gap-4 bg-gray-50 p-4 mb-6 text-sm">
+            <div>
+                <span class="font-semibold">Destination(s):</span>
+                <span class="text-gray-600"> Australia</span>
+            </div>
+            <div>
+                <span class="font-semibold">Dates:</span>
+                <span class="text-gray-600"> 04/11/2026 - 13/11/2026</span>
+            </div>
+            <div class="flex justify-between items-center">
+                <div>
+                    <span class="font-semibold">Traveller Ages:</span>
+                    <span class="text-gray-600"> 23</span>
+                </div>
+                <button class="text-blue-600 border border-blue-600 text-xs px-6 py-1 rounded">
+                    Edit
+                </button>
+            </div>
+        </div>
+
+        <!-- PLAN TABLE -->
+        <div class="grid grid-cols-3 border shadow border-gray-200 rounded-md overflow-hidden text-sm">
+
+            <!-- Empty Header cell -->
+            <div></div>
+
+            <!-- VOYAGER -->
+            <div class="bg-[var(--card-bg-color)] text-center p-6">
+                <div
+                    class="w-10 h-10 mx-auto rounded-full bg-[var(--tertiary-color)] text-white flex items-center justify-center mb-3">
+                    D
+                </div>
+                <p class="tracking-wide">VOYAGER</p>
+                <p class="text-gray-400 line-through text-sm">From $17.37</p>
+                <p class="text-2xl font-bold text-[var(--tertiary-color)]">$15.98</p>
+                <p class="text-xs text-gray-500">Total Cost</p>
+                <p class="text-[11px] text-gray-500 mt-2">
+                    Policy benefits listed below, per traveller limits apply
+                </p>
+            </div>
+
+            <!-- VOYAGER PLUS -->
+            <div class="text-center p-6">
+                <div
+                    class="w-10 h-10 mx-auto rounded-full bg-[var(--accent-color)] text-white flex items-center justify-center mb-3">
+                    D
+                </div>
+                <p class="tracking-wide">VOYAGER PLUS</p>
+                <p class="text-gray-400 line-through text-sm">From $44.94</p>
+                <p class="text-2xl font-bold text-[var(--accent-color)]">$41.34</p>
+                <p class="text-xs text-gray-500">Total Cost</p>
+                <p class="text-[11px] text-gray-500 mt-2">
+                    Policy benefits listed below, per traveller limits apply
+                </p>
+            </div>
+
+            <!-- ROWS / Benefits Table Body -->
+            <div class="col-span-3 divide-y divide-gray-200">
+
+                <!-- Cancellation highlighted area -->
+                <div class="border border-gray-200 shadow-sm">
+                    <div class="grid grid-cols-3 items-center px-6 py-4 bg-white border-b border-gray-200">
+                        <span>Cancellation or trip interruption ⓘ</span>
+                        <span class="text-center py-2">$1,000</span>
+                        <select class="border border-gray-200 rounded px-2 py-1 justify-self-center">
+                            <option>$4,000</option>
+                        </select>
+                    </div>
+
+                    <!-- Luggage -->
+                    <div class="grid grid-cols-3 items-center px-6 py-4 bg-white">
+                        <span>Luggage and personal effects ⓘ</span>
+                        <span class="text-center py-2">$500</span>
+                        <select class="border border-gray-200 rounded px-2 py-1 justify-self-center">
+                            <option>$1,000</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Travel Delay -->
+                <div class="grid grid-cols-3 items-stretch px-6 py-4 bg-[var(--card-bg-color)]">
+                    <span>Travel Delay ⓘ</span>
+                    <span class="flex items-center justify-center text-center">
+                        not available
+                    </span>
+                    <span class="text-center">$1,000</span>
+                </div>
+
+                <!-- Liability -->
+                <div class="grid grid-cols-3 items-stretch px-6 py-4 bg-[var(--card-bg-color)]">
+                    <span>Personal Liability ⓘ</span>
+                    <span class="flex items-center justify-center text-center">
+                        not available
+                    </span>
+                    <span class="text-center">$2,500,000</span>
+                </div>
+
+                <!-- Optional Cover Title -->
+                <div class="px-6 py-4 font-semibold text-[var(--tertiary-color)] bg-white">
+                    Optional Cover
+                </div>
+
+                <!-- Rental Vehicle Excess -->
+                <div class="grid grid-cols-3 items-center px-6 py-4">
+                    <span>Rental Vehicle Excess ⓘ</span>
+                    <span class="text-center bg-[var(--card-bg-color)] py-2">not available</span>
+                    <select class="border rounded px-2 py-1 justify-self-center">
+                        <option>Not Selected</option>
+                    </select>
+                </div>
+
+                <!-- CTA Row -->
+                <div class="grid grid-cols-3 px-6 py-6 items-center bg-white">
+                    <a href="#" class="text-blue-600 text-xs">Show All Benefits</a>
+
+                    <div class="text-center">
+                        <button class="bg-[var(--tertiary-color)] text-white px-6 py-2 rounded">
+                            CHOOSE PLAN
+                        </button>
+                        <p class="text-xs text-blue-600 mt-2">View Policy Information</p>
+                    </div>
+
+                    <div class="text-center">
+                        <button class="bg-[var(--accent-color)] text-white px-6 py-2 rounded">
+                            CHOOSE PLAN
+                        </button>
+                        <p class="text-xs text-blue-600 mt-2">View Policy Information</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-[var(--tertiary-color)] text-white text-xs">
+        <div
+            class="max-w-6xl mx-auto flex flex-col-reverse p-8 justify-center items-center md:flex-row  md:justify-between md:px-5 md:py-5">
+            <span class="m-2"><span id="year"></span> Logo Ipsum. All Rights Reserved.
+            </span>
+            <span class="flex items-center text-xs">
+                <a href="#" class="pr-3 mr-3 border-r border-white/40">
+                    Privacy Policy
+                </a>
+                <a href="#">
+                    Terms & Conditions
+                </a>
+            </span>
+        </div>
+    </footer>
+
+    <!-- External Script -->
+    <script src="./script2.js"></script>
+</body>
+
+</html>
