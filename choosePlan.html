@@ -7,85 +7,8 @@
     <title>Document</title>
     <!-- CND TailwindCSS -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- Tailwind's custom CSS -->
-    <style type="text/tailwindcss">
-        :root { 
-            --primary-color:  #0B2347;
-            --secondary-color: #FDBA2E;
-            --tertiary-color:  #0B2347;
-            --accent-color: #C93131; 
-            --text-primary: #212529;
-            --card-bg-color: #EEEEEE;   
-            --card-bg-color2: #dadada20;   
-        }
-        body {
-            font-family: 'Lato', sans-serif;
-        }
-        .stepper {
-    position: relative;
-}
-
-/* Background line */
-.stepper::before {
-    content: '';
-    position: absolute;
-    top: 12px;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: #e5e7eb;
-}
-
-/* Progress line */
-.stepper::after {
-    content: '';
-    position: absolute;
-    top: 12px;
-    left: 0;
-    height: 2px;
-    background: #2563eb;
-
-    /* 🔥 This is the key */
-    width: calc(
-        (var(--active-step) - 1) / 3 * 100%
-    );
-}
-
-/* Step */
-.step {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: 0;
-}
-
-/* Dot */
-.dot {
-    width: 24px;
-    height: 24px;
-    border-radius: 9999px;
-    border: 2px solid #d1d5db;
-    background: blue;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-}
-.dot2 {
-    width: 24px;
-    height: 24px;
-    border-radius: 9999px;
-    border: 2px solid #d1d5db;
-    background: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-}
-
-    </style>
+    <!-- custom CSS/Tailwind customs -->
+    <link rel="stylesheet" href="./assests/css/style.css">
     <!-- Custom Lato font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -102,10 +25,11 @@
         <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
             <a href="./index.html">
                 <div class="flex items-center gap-2 cursor-pointer">
-                    <img class="w-4" src="./images//Back Button.png" alt="button"> <span class="text-xs">Back</span>
+                    <img class="w-4" src="./assests/images//Back Button.png" alt="button"> <span
+                        class="text-xs">Back</span>
                 </div>
             </a>
-            <img src="./images/logo-light.png" alt="">
+            <img src="./assests/images/logo-light.png" alt="">
             <!-- empty item -->
             <span></span>
         </div>
@@ -126,7 +50,7 @@
                 <!-- Step 2 (Active) -->
                 <div class="step active">
                     <div>
-                        <img src="./images/plane.png" alt="">
+                        <img src="./assests/images/plane.png" alt="">
                     </div>
                     <span>Plan Option</span>
                 </div>
@@ -210,7 +134,7 @@
             <!-- ================= VOYAGER ================= -->
             <div id="card-voyager"
                 class="hidden flex sm:flex bg-[var(--card-bg-color)] p-6 sm:p-12 flex-col items-center justify-center">
-                <img class="w-1/5 sm:w-1/6" src="./images/Voyager.png" alt="Voyager logo">
+                <img class="w-1/5 sm:w-1/6" src="./assests/images/Voyager.png" alt="Voyager logo">
 
                 <p class="tracking-wide mt-2">VOYAGER</p>
                 <p class="text-gray-400 line-through text-sm">From $17.37</p>
@@ -298,7 +222,7 @@
             <!-- ================= VOYAGER PLUS ================= -->
             <div id="card-voyagerplus" class="flex p-6 sm:p-12 flex-col items-center">
 
-                <img class="w-1/5 sm:w-1/6" src="./images/VoyagerPlus.png" alt="Voyager Plus logo">
+                <img class="w-1/5 sm:w-1/6" src="./assests/images/VoyagerPlus.png" alt="Voyager Plus logo">
 
                 <p class="tracking-wide mt-2">VOYAGER PLUS</p>
                 <p class="text-gray-400 line-through text-sm">From $44.94</p>
@@ -491,7 +415,10 @@
     </footer>
 
     <!-- External Script -->
-    <script src="./script/script2.js"></script>
+    <script src="./assests/script/header.js"></script>
+    <script src="./assests/script/planSelection.js"></script>
+    <script src="./assests/script/utils.js"></script>
+
 </body>
 
 </html>

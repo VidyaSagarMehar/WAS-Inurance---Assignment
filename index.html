@@ -7,77 +7,8 @@
     <title>Document</title>
     <!-- CND TailwindCSS -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- Tailwind's custom CSS -->
-    <style type="text/tailwindcss">
-        :root { 
-            --primary-color:  #0B2347;
-            --secondary-color: #FDBA2E;
-            --tertiary-color:  #0B2347;
-            --accent-color: #C93131;
-            --text-primary: #212529;        
-            --header-bg-open: #292e318f;     
-        }
-        body {
-            font-family: 'Lato', sans-serif;
-        }
-
-        header#main-header {
-            background-color: transparent;
-            transition: background-color 0.3s ease;
-        }
-
-        header#main-header.open {
-            background-color: var(--header-bg-open);
-            color: white;
-        }
-
-        header#main-header.open .header-logo {
-            content: url('./images/logo-light.png');
-        }
-
-        header#main-header.open nav > a,
-        header#main-header.open nav > ul > li > a,
-        header#main-header.open nav > ul > li > button,
-        header#main-header.open nav svg {
-            color: white !important;
-        }
-        #travelMenu,
-        #travelMenu a,
-        #travelMenu button,
-        #travelMenu p,
-        #travelMenu h3 {
-            color: var(--text-primary) !important;
-        }
-        /* dropdown stays on top */
-        #travelMenu {
-            z-index: 9999;
-        }
-
-        /* Calender Icon-  Chrome, Edge, Safari */
-        .date-input {
-            position: relative;
-        }
-
-        /* picker cover the whole input */
-        .date-input::-webkit-calendar-picker-indicator {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            cursor: pointer;
-        }
-
-        /* Remove inner spin buttons */
-        .date-input::-webkit-inner-spin-button {
-            display: none;
-        }
-
-        /* Firefox */
-        .date-input {
-            -moz-appearance: textfield;
-        }
-    </style>
+    <!-- custom CSS/Tailwind customs -->
+    <link rel="stylesheet" href="./assests/css/style.css">
     <!-- Custom Lato font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -86,7 +17,7 @@
         rel="stylesheet">
 </head>
 
-<body class="min-h-screen bg-[url('./images/bg-cover.jpg')] 
+<body class="min-h-screen bg-[url('./assests/images/bg-cover.jpg')] 
          bg-cover bg-contain bg-no-repeat">
     <!-- Header Section -->
     <header id="main-header" class="p-4 text-[var(--text-primary)] relative z-50">
@@ -94,7 +25,7 @@
         <div id="pageOverlay" class="fixed inset-0 bg-black/70 z-[-1] hidden transition-opacity"></div>
         <nav class="container flex justify-between h-16 mx-auto font-bold relative z-10">
             <a rel="noopener noreferrer" href="#" aria-label="Back to homepage" class="flex items-center p-2">
-                <img src="./images/logo-dark.png" alt="Logo" class="header-logo">
+                <img src="./assests/images/logo-dark.png" alt="Logo" class="header-logo">
 
             </a>
             <ul class="items-stretch hidden space-x-3 md:flex md:items-center md:justify-center">
@@ -117,7 +48,7 @@
 
                             <!-- Image -->
                             <div>
-                                <img src="./images/TravelInsurance.png" alt="Travel Insurance"
+                                <img src="./assests/images/TravelInsurance.png" alt="Travel Insurance"
                                     class="rounded-lg w-3/4 object-cover">
                             </div>
 
@@ -193,7 +124,7 @@
 
         <!-- Header -->
         <div class="flex items-center justify-between p-4 border-b">
-            <img src="./images/logo-dark.png" class="h-6" />
+            <img src="./assests/images/logo-dark.png" class="h-6" />
 
             <button id="closeMobileMenu">
                 ✕
@@ -345,7 +276,9 @@
     </main>
 
     <!-- External Script -->
-    <script src="./script/script.js"></script>
+    <script src="./assests/script/header.js"></script>
+    <script src="./assests/script/countryDropdown.js"></script>
+    <script src="./assests/script/utils.js"></script>
 </body>
 
 </html>

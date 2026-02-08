@@ -1,0 +1,132 @@
+:root {
+	--primary-color: #0b2347;
+	--secondary-color: #fdba2e;
+	--tertiary-color: #0b2347;
+	--accent-color: #c93131;
+	--text-primary: #212529;
+	--header-bg-open: #292e318f;
+	--card-bg-color: #eeeeee;
+	--card-bg-color2: #dadada20;
+}
+
+body {
+	font-family: 'Lato', sans-serif;
+}
+
+header#main-header {
+	background-color: transparent;
+	transition: background-color 0.3s ease;
+}
+
+header#main-header.open {
+	background-color: var(--header-bg-open);
+	color: white;
+}
+
+header#main-header.open .header-logo {
+	content: url('../images/logo-light.png');
+}
+
+header#main-header.open nav > a,
+header#main-header.open nav > ul > li > a,
+header#main-header.open nav > ul > li > button,
+header#main-header.open nav svg {
+	color: white !important;
+}
+#travelMenu,
+#travelMenu a,
+#travelMenu button,
+#travelMenu p,
+#travelMenu h3 {
+	color: var(--text-primary) !important;
+}
+/* dropdown stays on top */
+#travelMenu {
+	z-index: 9999;
+}
+
+/* Calender Icon-  Chrome, Edge, Safari */
+.date-input {
+	position: relative;
+}
+
+/* picker cover the whole input */
+.date-input::-webkit-calendar-picker-indicator {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	cursor: pointer;
+}
+
+/* Remove inner spin buttons */
+.date-input::-webkit-inner-spin-button {
+	display: none;
+}
+
+/* Firefox */
+.date-input {
+	-moz-appearance: textfield;
+}
+
+.stepper {
+	position: relative;
+}
+
+/* Background line */
+.stepper::before {
+	content: '';
+	position: absolute;
+	top: 12px;
+	left: 0;
+	right: 0;
+	height: 2px;
+	background: #e5e7eb;
+}
+
+/* Progress line */
+.stepper::after {
+	content: '';
+	position: absolute;
+	top: 12px;
+	left: 0;
+	height: 2px;
+	background: #2563eb;
+
+	width: calc((var(--active-step) - 1) / 3 * 100%);
+}
+
+/* Step */
+.step {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-width: 0;
+}
+
+/* Dot */
+.dot {
+	width: 24px;
+	height: 24px;
+	border-radius: 9999px;
+	border: 2px solid #d1d5db;
+	background: blue;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 12px;
+}
+.dot2 {
+	width: 24px;
+	height: 24px;
+	border-radius: 9999px;
+	border: 2px solid #d1d5db;
+	background: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 12px;
+}
