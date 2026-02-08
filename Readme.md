@@ -14,6 +14,18 @@ This project was implemented based on the provided Figma design:
 https://www.figma.com/design/PTxY4uhxKNULunGjbCzSkf/Untitled?node-id=0-1&t=VEe2W9Woj21bZAsk-1
 
 ---
+## 🎥 Project Walkthrough (Video)
+https://github.com/user-attachments/assets/e44aa005-58ff-4d63-9d64-992290e8e40b
+
+
+
+
+
+https://github.com/user-attachments/assets/d0c72f4e-d910-4fba-b11f-444884dea473
+
+
+
+---
 
 ## 🎯 Assessment Objectives
 
