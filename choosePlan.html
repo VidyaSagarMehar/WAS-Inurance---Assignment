@@ -53,8 +53,8 @@
 
             <!-- Line -->
             <div class="relative flex items-center justify-between">
-                <div class="absolute top-3 left-9 w-full h-[2px] bg-gray-200"></div>
-                <div class="absolute top-3 left-9 w-[17.5vw] h-[2px] bg-blue-600"></div>
+                <div class="absolute top-3 left-9 w-[70vw]  2xl:w-full h-[2px] bg-gray-200"></div>
+                <div class="absolute top-3 left-9 w-[20vw] sm:w-[22vw] 3xl:w-[17.5vw] h-[2px] bg-blue-600"></div>
 
                 <!-- Step 1 (Completed) -->
                 <div class="relative z-10 flex flex-col items-center">
@@ -121,6 +121,24 @@
         </div>
 
 
+        <!-- Mobile Plan Selector -->
+        <div class="sm:hidden border border-gray-200 rounded-md overflow-hidden mb-4">
+
+            <!-- Voyager -->
+            <button onclick="selectPlan('voyager')" id="tab-voyager" class="w-full flex justify-between items-center px-4 py-3
+               text-sm font-medium bg-white">
+                <span>VOYAGER</span>
+                <span class="text-[var(--tertiary-color)] font-semibold">$15.98</span>
+            </button>
+
+            <!-- Voyager Plus -->
+            <button onclick="selectPlan('voyagerplus')" id="tab-voyagerplus" class="w-full flex justify-between items-center px-4 py-3
+               text-sm font-medium bg-gray-50">
+                <span>VOYAGER PLUS</span>
+                <span class="text-[var(--secondary-color)] font-semibold">$41.34</span>
+            </button>
+
+        </div>
 
         <!-- PLAN TABLE -->
         <div class="grid grid-cols-1 sm:grid-cols-3
@@ -131,10 +149,8 @@
             <div class="hidden sm:block"></div>
 
             <!-- ================= VOYAGER ================= -->
-            <div class="bg-[var(--card-bg-color)]
-               p-6 sm:p-12
-               flex flex-col items-center">
-
+            <div id="card-voyager"
+                class="hidden flex sm:flex bg-[var(--card-bg-color)] p-6 sm:p-12 flex-col items-center justify-center">
                 <img class="w-1/5 sm:w-1/6" src="./images/Voyager.png" alt="Voyager logo">
 
                 <p class="tracking-wide mt-2">VOYAGER</p>
@@ -221,8 +237,7 @@
             </div>
 
             <!-- ================= VOYAGER PLUS ================= -->
-            <div class="p-6 sm:p-12
-               flex flex-col items-center">
+            <div id="card-voyagerplus" class="flex p-6 sm:p-12 flex-col items-center">
 
                 <img class="w-1/5 sm:w-1/6" src="./images/VoyagerPlus.png" alt="Voyager Plus logo">
 
