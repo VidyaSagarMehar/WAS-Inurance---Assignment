@@ -1,7 +1,7 @@
 # ✈️ Travel Insurance Quote & Plan Selection  
 **Frontend Assessment Submission – WAS Insurance**
 
-🌐 **Live Preview:**  [LINK](https://was-inurance-assignment-jv805ijtb-vidya-sagar-mehars-projects.vercel.app/)
+🌐 **Live Preview:**  [LINK](https://was-inurance-assignment.vercel.app/)
 
 This project is a **frontend assessment submission** built in response to the WAS Insurance Front End Developer role.  
 It demonstrates strong fundamentals in **HTML5, CSS3, and JavaScript**, with a focus on **performance, responsiveness, accessibility, and clean architecture**.
@@ -10,8 +10,9 @@ The implementation closely follows the provided Figma design and meets the expec
 
 ---
 🎨 **Figma Design Reference:**  
-This project was implemented based on the provided Figma design:  
+This project was implemented based on the provided Figma design:
 https://www.figma.com/design/PTxY4uhxKNULunGjbCzSkf/Untitled?node-id=0-1&t=VEe2W9Woj21bZAsk-1
+
 ---
 
 ## 🎯 Assessment Objectives

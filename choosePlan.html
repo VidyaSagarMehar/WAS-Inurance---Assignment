@@ -4,7 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <title>Travel Insurance Quote | Compare & Choose the Best Plan</title>
+    <!-- Favicon -->
+    <link rel="icon" href="./assests/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assests/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assests/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assests/images/apple-touch-icon.png">
+
+    <meta name="description"
+        content="Get an instant travel insurance quote. Select destinations, choose travel dates, compare plans, and book seamlessly with a fast, responsive, and user-friendly experience.">
+
+    <meta name="keywords"
+        content="travel insurance, insurance quote, travel plan comparison, trip insurance, travel coverage">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://was-inurance-assignment-jv805ijtb-vidya-sagar-mehars-projects.vercel.app/" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Travel Insurance Quote & Plan Selection" />
+    <meta property="og:description"
+        content="Compare travel insurance plans, select destinations, and book your coverage with a modern and responsive UI." />
+    <meta property="og:image" content="https://your-live-url.vercel.app/assests/images/og-preview.png" />
+    <meta property="og:url" content="https://your-live-url.vercel.app/" />
+    <meta property="og:type" content="website" />
+
     <!-- CND TailwindCSS -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- custom CSS/Tailwind customs -->
@@ -111,14 +135,14 @@
             <button onclick="selectPlan('voyager')" id="tab-voyager" class="w-full flex justify-between items-center px-4 py-3
                text-sm font-medium bg-white">
                 <span>VOYAGER</span>
-                <span class="text-[var(--tertiary-color)] font-semibold">$15.98</span>
+                <span class="text-[var(--tertiary-color)] font-semibold">$15.<span class="text-sm">98</span>
             </button>
 
             <!-- Voyager Plus -->
             <button onclick="selectPlan('voyagerplus')" id="tab-voyagerplus" class="w-full flex justify-between items-center px-4 py-3
                text-sm font-medium bg-gray-50">
                 <span>VOYAGER PLUS</span>
-                <span class="text-[var(--secondary-color)] font-semibold">$41.34</span>
+                <span class="text-[var(--secondary-color)] font-semibold">$41.<span class="text-sm">34</span>
             </button>
 
         </div>
@@ -138,7 +162,7 @@
 
                 <p class="tracking-wide mt-2">VOYAGER</p>
                 <p class="text-gray-400 line-through text-sm">From $17.37</p>
-                <p class="text-2xl font-bold text-[var(--tertiary-color)]">$15.98</p>
+                <p class="text-2xl font-bold text-[var(--tertiary-color)]">$15.<span class="text-sm">98</span> </p>
                 <p class="text-xs text-gray-500">Total Cost</p>
 
                 <!-- Mobile benefits (collapsed) -->
@@ -226,7 +250,7 @@
 
                 <p class="tracking-wide mt-2">VOYAGER PLUS</p>
                 <p class="text-gray-400 line-through text-sm">From $44.94</p>
-                <p class="text-2xl font-bold text-[var(--secondary-color)]">$41.34</p>
+                <p class="text-2xl font-bold text-[var(--secondary-color)]">$41.<span class="text-sm">34</span></p>
                 <p class="text-xs text-gray-500">Total Cost</p>
 
                 <!-- Mobile benefits (collapsed) -->
