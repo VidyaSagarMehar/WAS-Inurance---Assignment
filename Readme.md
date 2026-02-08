@@ -1,6 +1,6 @@
 # ✈️ Travel Insurance Quote & Plan Selection
 
-🌐 **Live Preview:**
+🌐 **Live Preview:** [Link](https://vercel.com/vidya-sagar-mehars-projects/was-inurance-assignment/C1LV3LsphzkNq5EyuhGYPYpYNe2K)
 
 A modern, responsive **Travel Insurance web application** that allows users to:
 - Select destinations with smart autocomplete
@@ -67,20 +67,20 @@ project-root <br>
 ├── assests <br>
 │ ├── css <br>
 │ │ └── style.css <br>
-│ │
+│ │ <br>
 │ ├── images <br>
 │ │ ├── logo-dark.png <br>
 │ │ ├── logo-light.png <br>
 │ │ ├── bg-cover.jpg <br>
 │ │ ├── plane.png <br>
 │ │ └── ... <br>
-│ │
+│ │ <br>
 │ └── script <br>
 │ ├── header.js <br>
 │ ├── countryDropdown.js <br>
 │ ├── planSelection.js <br>
 │ └── utils.js <br>
-│
+│ <br>
 └── README.md <br>
 
 
