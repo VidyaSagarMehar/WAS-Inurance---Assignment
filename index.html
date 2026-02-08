@@ -4,11 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <title>Travel Insurance Quote | Compare & Choose the Best Plan</title>
+    <!-- Favicon -->
+    <link rel="icon" href="./assests/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assests/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assests/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assests/images/apple-touch-icon.png">
+
+    <meta name="description"
+        content="Get an instant travel insurance quote. Select destinations, choose travel dates, compare plans, and book seamlessly with a fast, responsive, and user-friendly experience.">
+
+    <meta name="keywords"
+        content="travel insurance, insurance quote, travel plan comparison, trip insurance, travel coverage">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://was-inurance-assignment-jv805ijtb-vidya-sagar-mehars-projects.vercel.app/" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Travel Insurance Quote & Plan Selection" />
+    <meta property="og:description"
+        content="Compare travel insurance plans, select destinations, and book your coverage with a modern and responsive UI." />
+    <meta property="og:image" content="https://your-live-url.vercel.app/assests/images/og-preview.png" />
+    <meta property="og:url" content="https://your-live-url.vercel.app/" />
+    <meta property="og:type" content="website" />
+
     <!-- CND TailwindCSS -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
     <!-- custom CSS/Tailwind customs -->
     <link rel="stylesheet" href="./assests/css/style.css">
+
     <!-- Custom Lato font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,12 +46,13 @@
 <body class="min-h-screen bg-[url('./assests/images/bg-cover.jpg')] 
          bg-cover bg-contain bg-no-repeat">
     <!-- Header Section -->
-    <header id="main-header" class="p-4 text-[var(--text-primary)] relative z-50">
+    <header id="main-header" role="banner" class="p-4 text-[var(--text-primary)] relative z-50">
         <!-- Page Overlay -->
         <div id="pageOverlay" class="fixed inset-0 bg-black/70 z-[-1] hidden transition-opacity"></div>
-        <nav class="container flex justify-between h-16 mx-auto font-bold relative z-10">
+
+        <nav role="navigation" class="container flex justify-between h-16 mx-auto font-bold relative z-10">
             <a rel="noopener noreferrer" href="#" aria-label="Back to homepage" class="flex items-center p-2">
-                <img src="./assests/images/logo-dark.png" alt="Logo" class="header-logo">
+                <img src="./assests/images/logo-dark.png" alt="Travel Insurance Company Logo" class="header-logo">
 
             </a>
             <ul class="items-stretch hidden space-x-3 md:flex md:items-center md:justify-center">
@@ -48,7 +75,7 @@
 
                             <!-- Image -->
                             <div>
-                                <img src="./assests/images/TravelInsurance.png" alt="Travel Insurance"
+                                <img src="./assests/images/TravelInsurance.png" alt="Travel Insurance Company Logo"
                                     class="rounded-lg w-3/4 object-cover">
                             </div>
 
@@ -124,7 +151,7 @@
 
         <!-- Header -->
         <div class="flex items-center justify-between p-4 border-b">
-            <img src="./assests/images/logo-dark.png" class="h-6" />
+            <img src="./assests/images/logo-dark.png" class="h-6" alt="Travel Insurance Company Logo" />
 
             <button id="closeMobileMenu">
                 ✕
@@ -164,7 +191,7 @@
     </div>
 
     <!-- Hero Section -->
-    <main class=" flex flex-col justify-center items-center">
+    <main role="main" class=" flex flex-col justify-center items-center">
         <!-- Headline -->
         <div class="text-center p-6 pb-12">
             <p class="uppercase text-xl tracking-widest font-normal">Breaking the limit of traditional travel</p>
@@ -192,6 +219,7 @@
 
                 <div class="relative w-full" id="countryDropdown">
                     <input type="text" id="countryInput" placeholder="Type or choose your destination"
+                        aria-label="Select travel destination"
                         class="w-full border border-gray-200 rounded-lg px-4 py-2 pr-10 text-sm outline-none focus:border-blue-500"
                         autocomplete="off" />
 
@@ -275,10 +303,13 @@
         </div>
     </main>
 
+    <!-- preload bg -->
+    <link rel="preload" as="image" href="./assests/images/bg-cover.jpg">
     <!-- External Script -->
     <script src="./assests/script/header.js"></script>
     <script src="./assests/script/countryDropdown.js"></script>
     <script src="./assests/script/utils.js"></script>
+
 </body>
 
 </html>
