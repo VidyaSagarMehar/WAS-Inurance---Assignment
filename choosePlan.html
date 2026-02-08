@@ -94,61 +94,227 @@
     <main class="max-w-6xl mx-auto px-4 py-6">
 
         <!-- Trip Summary -->
-        <div class="grid grid-cols-3 gap-4 bg-gray-50 p-4 mb-6 text-sm">
-            <div>
+        <div class="grid grid-row gap-4 sm:grid sm:grid-cols-3 sm:gap-4 bg-gray-50 p-4 mb-6 text-sm relative">
+
+            <div class="flex flex-col sm:block">
                 <span class="font-semibold">Destination(s):</span>
                 <span class="text-gray-600"> Australia</span>
             </div>
-            <div>
+
+            <div class="flex flex-col sm:block">
                 <span class="font-semibold">Dates:</span>
                 <span class="text-gray-600"> 04/11/2026 - 13/11/2026</span>
             </div>
+
             <div class="flex justify-between items-center">
-                <div>
+                <div class="flex flex-col sm:block">
                     <span class="font-semibold">Traveller Ages:</span>
                     <span class="text-gray-600"> 23</span>
                 </div>
-                <button class="text-blue-600 border border-blue-600 text-xs px-6 py-1 rounded cursor-pointer">
+
+                <button class="text-blue-600 border border-blue-600 text-xs px-6 py-1 rounded cursor-pointer
+                   absolute top-4 right-4
+                   sm:static">
                     Edit
                 </button>
             </div>
         </div>
 
+
+
         <!-- PLAN TABLE -->
-        <div class="grid grid-cols-3 border shadow border-gray-200 rounded-md overflow-hidden text-sm">
+        <div class="grid grid-cols-1 sm:grid-cols-3
+           border shadow border-gray-200 rounded-md
+           overflow-hidden text-sm">
 
-            <!-- Empty Header cell -->
-            <div></div>
+            <!-- Empty Header (desktop only) -->
+            <div class="hidden sm:block"></div>
 
-            <!-- VOYAGER -->
-            <div class="bg-[var(--card-bg-color)] p-12 flex flex-col justify-center items-center">
-                <img class="w-1/6" src="./images/Voyager.png" alt="Voyager logo">
+            <!-- ================= VOYAGER ================= -->
+            <div class="bg-[var(--card-bg-color)]
+               p-6 sm:p-12
+               flex flex-col items-center">
 
-                <p class="tracking-wide">VOYAGER</p>
+                <img class="w-1/5 sm:w-1/6" src="./images/Voyager.png" alt="Voyager logo">
+
+                <p class="tracking-wide mt-2">VOYAGER</p>
                 <p class="text-gray-400 line-through text-sm">From $17.37</p>
                 <p class="text-2xl font-bold text-[var(--tertiary-color)]">$15.98</p>
                 <p class="text-xs text-gray-500">Total Cost</p>
-                <p class="text-[11px] text-gray-500 mt-2">
-                    Policy benefits listed below, per traveller limits apply
-                </p>
+
+                <!-- Mobile benefits (collapsed) -->
+                <div id="voyager-benefits" class="hidden w-full mt-4 border border-gray-200 rounded sm:hidden text-sm">
+
+                    <!-- Cancellation -->
+                    <div class="grid grid-cols-2 items-center">
+                        <div class="p-3 text-gray-600 border border-gray-200">
+                            Cancellation or trip interruption ⓘ
+                        </div>
+                        <div class="p-3 border border-gray-200 h-full flex items-center">
+                            <select class="border border-gray-200 rounded px-2 py-1 text-sm w-full">
+                                <option>$4,000</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Luggage -->
+                    <div class="grid grid-cols-2 items-center">
+                        <div class="p-3 text-gray-600 border border-gray-200">
+                            Luggage and personal effects ⓘ
+                        </div>
+                        <div class="p-3 border border-gray-200 h-full flex items-center">
+                            <select class="border border-gray-200 rounded px-2 py-1 text-sm w-full">
+                                <option>$1,000</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Travel Delay -->
+                    <div class="grid grid-cols-2 items-center">
+                        <div class="p-3 text-gray-600 border border-gray-200">
+                            Travel Delay ⓘ
+                        </div>
+                        <div class="p-3 text-right border border-gray-200">
+                            $1,000
+                        </div>
+                    </div>
+
+                    <!-- Personal Liability -->
+                    <div class="grid grid-cols-2 items-center">
+                        <div class="p-3 text-gray-600 border border-gray-200">
+                            Personal Liability ⓘ
+                        </div>
+                        <div class="p-3 text-right border border-gray-200">
+                            $2,500,000
+                        </div>
+                    </div>
+
+                    <!-- Optional Cover -->
+                    <div class="p-3 font-semibold text-[var(--tertiary-color)] border border-gray-200">
+                        Optional Cover
+                    </div>
+
+                    <!-- Rental Vehicle Excess -->
+                    <div class="grid grid-cols-2 items-center">
+                        <div class="p-3 text-gray-600 border border-gray-200">
+                            Rental Vehicle Excess ⓘ
+                        </div>
+                        <div class="p-3 border border-gray-200 h-full flex items-center">
+                            <select class="border border-gray-200 rounded px-2 py-1 text-sm w-full">
+                                <option>Not Selected</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Mobile CTA -->
+                <div class="flex flex-col items-center mt-6 sm:hidden">
+                    <button class="bg-[var(--tertiary-color)] text-white px-6 py-2 rounded">
+                        CHOOSE PLAN
+                    </button>
+
+                    <button onclick="toggleBenefits('voyager-benefits', this)" class="text-blue-600 text-xs mt-3">
+                        Show all benefits
+                    </button>
+                </div>
             </div>
 
-            <!-- VOYAGER PLUS -->
-            <div class=" p-12 flex flex-col justify-center items-center">
-                <img class="w-1/6" src="./images/VoyagerPlus.png" alt="Voyager logo">
-                <p class="tracking-wide">VOYAGER PLUS</p>
+            <!-- ================= VOYAGER PLUS ================= -->
+            <div class="p-6 sm:p-12
+               flex flex-col items-center">
+
+                <img class="w-1/5 sm:w-1/6" src="./images/VoyagerPlus.png" alt="Voyager Plus logo">
+
+                <p class="tracking-wide mt-2">VOYAGER PLUS</p>
                 <p class="text-gray-400 line-through text-sm">From $44.94</p>
                 <p class="text-2xl font-bold text-[var(--secondary-color)]">$41.34</p>
                 <p class="text-xs text-gray-500">Total Cost</p>
-                <p class="text-[11px] text-gray-500 mt-2">
-                    Policy benefits listed below, per traveller limits apply
-                </p>
+
+                <!-- Mobile benefits (collapsed) -->
+                <div id="voyagerplus-benefits" class="w-full mt-4 border border-gray-200 rounded sm:hidden text-xs">
+
+                    <!-- Cancellation -->
+                    <div class="grid grid-cols-2 items-center">
+                        <div class="p-3 text-gray-600 border border-gray-200">
+                            Cancellation or trip interruption ⓘ
+                        </div>
+                        <div class="p-3 border border-gray-200 h-full flex items-center">
+                            <select class="border border-gray-200 rounded px-2 py-1 text-sm w-full">
+                                <option>$4,000</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Luggage -->
+                    <div class="grid grid-cols-2 items-center">
+                        <div class="p-3 text-gray-600 border border-gray-200">
+                            Luggage and personal effects ⓘ
+                        </div>
+                        <div class="p-3 border border-gray-200 h-full flex items-center">
+                            <select class="border border-gray-200 rounded px-2 py-1 text-sm w-full">
+                                <option>$1,000</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Travel Delay -->
+                    <div class="grid grid-cols-2 items-center">
+                        <div class="p-3 text-gray-600 border border-gray-200">
+                            Travel Delay ⓘ
+                        </div>
+                        <div class="p-3 text-right border border-gray-200">
+                            $1,000
+                        </div>
+                    </div>
+
+                    <!-- Personal Liability -->
+                    <div class="grid grid-cols-2 items-center">
+                        <div class="p-3 text-gray-600 border border-gray-200">
+                            Personal Liability ⓘ
+                        </div>
+                        <div class="p-3 text-right border border-gray-200">
+                            $2,500,000
+                        </div>
+                    </div>
+
+                    <!-- Optional Cover -->
+                    <div class="p-3 font-semibold text-[var(--tertiary-color)] border border-gray-200">
+                        Optional Cover
+                    </div>
+
+                    <!-- Rental Vehicle Excess -->
+                    <div class="grid grid-cols-2 items-center">
+                        <div class="p-3 text-gray-600 border border-gray-200">
+                            Rental Vehicle Excess ⓘ
+                        </div>
+                        <div class="p-3 border border-gray-200 h-full flex items-center">
+                            <select class="border border-gray-200 rounded px-2 py-1 text-sm w-full">
+                                <option>Not Selected</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Mobile CTA -->
+                <div class="flex flex-col items-center mt-6 sm:hidden">
+                    <button class="bg-[var(--secondary-color)] text-white px-6 py-2 rounded">
+                        CHOOSE PLAN
+                    </button>
+
+                    <button onclick="toggleBenefits('voyagerplus-benefits', this)" class="text-blue-600 text-xs mt-3">
+                        Hide benefits
+                    </button>
+
+                </div>
             </div>
 
-            <!-- ROWS / Benefits Table Body -->
-            <div class="col-span-3 divide-y divide-gray-200">
+            <!-- ================= DESKTOP COMPARISON TABLE ================= -->
+            <!-- Hidden on mobile -->
+            <div class="hidden sm:block col-span-3 divide-y divide-gray-200">
 
-                <!-- Cancellation highlighted area -->
+                <!-- Cancellation -->
                 <div class="border border-gray-200 shadow-sm">
                     <div class="grid grid-cols-3 items-center px-6 py-4 bg-white border-b border-gray-200">
                         <span>Cancellation or trip interruption ⓘ</span>
@@ -169,52 +335,34 @@
                 </div>
 
                 <!-- Travel Delay -->
-                <div class="grid grid-cols-3 items-stretch px-6 py-0">
-                    <span class="flex items-center py-4 text-sm">
-                        Travel Delay ⓘ
-                    </span>
-
-                    <div class="bg-[var(--card-bg-color)] flex items-center justify-center w-full h-full">
+                <div class="grid grid-cols-3 items-stretch px-6">
+                    <span class="flex items-center py-4 text-sm">Travel Delay ⓘ</span>
+                    <div class="bg-[var(--card-bg-color)] flex items-center justify-center">
                         <span class="text-gray-600 font-medium">not available</span>
                     </div>
-
-                    <span class="flex items-center justify-center py-4 text-sm">
-                        $1,000
-                    </span>
+                    <span class="flex items-center justify-center py-4 text-sm">$1,000</span>
                 </div>
 
                 <!-- Personal Liability -->
-                <div class="grid grid-cols-3 items-stretch px-6 py-0">
-                    <span class="flex items-center py-4 text-sm">
-                        Personal Liability ⓘ
-                    </span>
-
-                    <div class="bg-[var(--card-bg-color)] flex items-center justify-center w-full h-full">
+                <div class="grid grid-cols-3 items-stretch px-6">
+                    <span class="flex items-center py-4 text-sm">Personal Liability ⓘ</span>
+                    <div class="bg-[var(--card-bg-color)] flex items-center justify-center">
                         <span class="text-gray-600 font-medium">not available</span>
                     </div>
-
-                    <span class="flex items-center justify-center py-4 text-sm">
-                        $2,500,000
-                    </span>
+                    <span class="flex items-center justify-center py-4 text-sm">$2,500,000</span>
                 </div>
 
-                <!-- Optional Cover Title -->
-                <div class="px-6 py-4 font-semibold text-[var(--tertiary-color)] ">
+                <!-- Optional Cover -->
+                <div class="px-6 py-4 font-semibold text-[var(--tertiary-color)]">
                     Optional Cover
                 </div>
 
-                <!-- Rental Vehicle Excess -->
-                <div class="grid grid-cols-3 items-stretch px-6 py-0 border-none">
-                    <span class="flex items-center py-4">
-                        Rental Vehicle Excess ⓘ
-                    </span>
-
-                    <div class="bg-[var(--card-bg-color2)] flex items-center justify-center w-full h-full">
-                        <span class="text-gray-600 font-medium">
-                            not available
-                        </span>
+                <!-- Rental Vehicle -->
+                <div class="grid grid-cols-3 items-stretch px-6">
+                    <span class="flex items-center py-4">Rental Vehicle Excess ⓘ</span>
+                    <div class="bg-[var(--card-bg-color2)] flex items-center justify-center">
+                        <span class="text-gray-600 font-medium">not available</span>
                     </div>
-
                     <div class="flex items-center justify-center py-4">
                         <select class="border border-gray-200 rounded px-2 py-1 cursor-pointer">
                             <option>Not Selected</option>
@@ -222,38 +370,32 @@
                     </div>
                 </div>
 
+                <!-- Desktop CTA Row -->
+                <div class="grid grid-cols-3 items-stretch px-6">
 
-                <!-- CTA Row -->
-                <div class="grid grid-cols-3 items-stretch px-6 py-0 border-none">
-
-                    <!-- Left -->
                     <div class="flex items-center py-6">
                         <a href="#" class="text-blue-600 text-xs">Show All Benefits</a>
                     </div>
 
-                    <!-- Middle (FULL HEIGHT BG) -->
-                    <div
-                        class="bg-[var(--card-bg-color2)] flex flex-col items-center justify-center w-full h-full py-6">
-                        <button class="bg-[var(--tertiary-color)] text-white px-6 py-2 rounded cursor-pointer">
+                    <div class="bg-[var(--card-bg-color2)]
+                       flex flex-col items-center justify-center py-6">
+                        <button class="bg-[var(--tertiary-color)] text-white px-6 py-2 rounded">
                             CHOOSE PLAN
                         </button>
                         <p class="text-xs text-blue-600 mt-2">View Policy Information</p>
                     </div>
 
-                    <!-- Right -->
                     <div class="flex flex-col items-center justify-center py-6">
-                        <button class="bg-[var(--secondary-color)] text-white px-6 py-2 rounded cursor-pointer">
+                        <button class="bg-[var(--secondary-color)] text-white px-6 py-2 rounded">
                             CHOOSE PLAN
                         </button>
                         <p class="text-xs text-blue-600 mt-2">View Policy Information</p>
                     </div>
 
                 </div>
-
-
-
             </div>
         </div>
+
 
     </main>
 
