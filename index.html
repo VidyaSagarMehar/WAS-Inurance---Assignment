@@ -48,9 +48,34 @@
         #travelMenu h3 {
             color: var(--text-primary) !important;
         }
-        /* Make sure dropdown stays on top */
+        /* dropdown stays on top */
         #travelMenu {
             z-index: 9999;
+        }
+
+        /* Calender Icon-  Chrome, Edge, Safari */
+        .date-input {
+            position: relative;
+        }
+
+        /* picker cover the whole input */
+        .date-input::-webkit-calendar-picker-indicator {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        /* Remove inner spin buttons */
+        .date-input::-webkit-inner-spin-button {
+            display: none;
+        }
+
+        /* Firefox */
+        .date-input {
+            -moz-appearance: textfield;
         }
     </style>
     <!-- Custom Lato font -->
@@ -234,86 +259,88 @@
                     Where are you travelling?
                 </label>
 
-                <div class="relative">
-                    <input type="text" placeholder="Type or choose your destinations"
-                        class="w-full border border-gray-200   rounded-lg px-4 py-2 pr-10 text-sm outline-none cursor-pointer" />
+                <div class="relative w-full" id="countryDropdown">
+                    <input type="text" id="countryInput" placeholder="Type or choose your destination"
+                        class="w-full border border-gray-200 rounded-lg px-4 py-2 pr-10 text-sm outline-none focus:border-blue-500"
+                        autocomplete="off" />
 
                     <!-- Dropdown icon -->
-                    <span class="pointer-events-none absolute right-3 top-5 -translate-y-1/2 text-gray-400">
+                    <span id="dropdownIcon"
+                        class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 cursor-pointer transition-transform duration-200">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
                         </svg>
                     </span>
 
-
-                    <!-- Chips -->
-                    <div class="flex flex-wrap gap-2 mt-3">
-                        <span
-                            class="bg-[var(--primary-color)] text-white text-xs px-3 py-1 rounded flex items-center gap-1">
-                            Austria <span class="cursor-pointer">×</span>
-                        </span>
-                        <span
-                            class="bg-[var(--primary-color)] text-white text-xs px-3 py-1 rounded flex items-center gap-1">
-                            Bali (Indonesia) <span class="cursor-pointer">×</span>
-                        </span>
-                        <span
-                            class="bg-[var(--primary-color)] text-white text-xs px-3 py-1 rounded flex items-center gap-1">
-                            Canada <span class="cursor-pointer">×</span>
-                        </span>
-                    </div>
+                    <!-- Dropdown list -->
+                    <ul id="countryList"
+                        class="absolute z-10 mt-1 w-full bg-white border border-gray-200 rounded-lg shadow-lg max-h-48 overflow-auto hidden">
+                    </ul>
                 </div>
 
-                <!-- Leave Date -->
-                <div class="mb-4">
-                    <label class="block text-sm font-semibold text-gray-800 mb-2">
-                        When do you leave?
-                    </label>
-                    <input type="text" placeholder="DD/MM/YYYY"
-                        class="w-full border border-gray-200   rounded-lg px-4 py-2 text-sm outline-none" />
+
+                <!-- Chips -->
+                <div id="chipsContainer" class="flex flex-wrap gap-2 mt-3">
+
                 </div>
-
-                <!-- Return Date -->
-                <div class="mb-4">
-                    <label class="block text-sm font-semibold text-gray-800 mb-2">
-                        When do you return?
-                    </label>
-                    <input type="text" placeholder="DD/MM/YYYY"
-                        class="w-full border border-gray-200  rounded-lg px-4 py-2 text-sm outline-none" />
-                </div>
-
-                <!-- Age -->
-                <div class="mb-5">
-                    <label class="block text-sm font-semibold text-gray-800 mb-2">
-                        Current age of all Travellers?
-                    </label>
-
-                    <div class="flex items-center gap-3">
-                        <input type="number"
-                            class="w-12 h-12 border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none" />
-                        <button
-                            class="w-12 h-12 rounded-lg bg-[var(--secondary-color)] text-xl font-bold flex items-center justify-center cursor-pointer">
-                            +
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Promo Code -->
-                <div class="mb-6">
-                    <input type="text" placeholder="Promo Code"
-                        class="w-full border border-gray-200 rounded-lg px-4 py-2 text-sm outline-none" />
-                </div>
-
-                <!-- CTA -->
-                <a href="./choosePlan.html">
-                    <button
-                        class="w-full bg-[var(--secondary-color)] hover:bg-yellow-500 transition text-black font-bold py-3 rounded-xl cursor-pointer">
-                        GET A QUOTE
-                    </button>
-                </a>
-
-
             </div>
+
+            <!-- Leave Date -->
+            <div class="mb-4">
+                <label class="block text-sm font-semibold text-gray-800 mb-2">
+                    When do you leave?
+                </label>
+                <input type="date"
+                    class="date-input w-full border border-gray-200 rounded-lg px-4 py-2 text-sm outline-none" />
+            </div>
+
+            <!-- Return Date -->
+            <div class="mb-4">
+                <label class="block text-sm font-semibold text-gray-800 mb-2">
+                    When do you return?
+                </label>
+                <input type="date"
+                    class="date-input w-full border border-gray-200 rounded-lg px-4 py-2 text-sm outline-none" />
+            </div>
+
+
+            <!-- Hidden native date inputs -->
+            <input type="date" id="leaveDateNative" class="hidden">
+            <input type="date" id="returnDateNative" class="hidden">
+
+            <!-- Age -->
+            <div class="mb-5">
+                <label class="block text-sm font-semibold text-gray-800 mb-2">
+                    Current age of all Travellers?
+                </label>
+
+                <div class="flex items-center gap-3">
+                    <input type="number"
+                        class="w-12 h-12 border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none" />
+                    <button
+                        class="w-12 h-12 rounded-lg bg-[var(--secondary-color)] text-xl font-bold flex items-center justify-center cursor-pointer">
+                        +
+                    </button>
+                </div>
+            </div>
+
+            <!-- Promo Code -->
+            <div class="mb-6">
+                <input type="text" placeholder="Promo Code"
+                    class="w-full border border-gray-200 rounded-lg px-4 py-2 text-sm outline-none" />
+            </div>
+
+            <!-- CTA -->
+            <a href="./choosePlan.html">
+                <button
+                    class="w-full bg-[var(--secondary-color)] hover:bg-yellow-500 transition text-black font-bold py-3 rounded-xl cursor-pointer">
+                    GET A QUOTE
+                </button>
+            </a>
+
+
+        </div>
         </div>
     </main>
 
